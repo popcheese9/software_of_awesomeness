@@ -1,0 +1,66 @@
+# This is the coding I used in eclipse
+
+package main;
+
+import javax.swing.JOptionPane;
+public class Main_code {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		int run = 1;
+		while(run == 1){
+		String Q1 = JOptionPane.showInputDialog("Input first x coordinate.");
+		String Q3 = JOptionPane.showInputDialog("Input first y coordinate.");
+		String Q2 = JOptionPane.showInputDialog("Input second x coordinate.");
+		String Q4 = JOptionPane.showInputDialog("Input second y coordinate.");
+		
+		
+		int x1 = Integer.parseInt(Q1);
+		int x2 = Integer.parseInt(Q2);
+		int y1 = Integer.parseInt(Q3);
+		int y2 = Integer.parseInt(Q4);
+		
+		int A1 = ((x1 - x2)*(x1 - x2));
+		int A2 = ((y1 - y2)*(y1 - y2));
+		int A3 = (A1 + A2);
+		double A4 = Math.sqrt(A3);
+		
+		double A5 = ((x1 + x2)/2);
+		double A6 = ((y1 + y2)/2);
+		
+		int runn = 1;
+		
+		
+		JOptionPane.showMessageDialog(null, "Distance: " + A4 + " Midpoint: " + A5 + ", " + A6);
+		
+		while(runn == 1){
+			Object[] choice = {"Yes",
+				"No",
+				"reshow answer"};
+	 		int x = JOptionPane.showOptionDialog(null,
+	 			"Calculate again?"
+				+ "",
+			"Again?",
+			JOptionPane.YES_NO_CANCEL_OPTION,
+			JOptionPane.QUESTION_MESSAGE,
+			null,
+			choice,
+			choice[2]);
+		
+	 			if(x == 0){
+	 				run = 1;
+	 				runn = 0;
+	 			}else if(x == 1){
+	 				run = 0;
+	 				runn = 0;
+	 			}else if(x == 2){
+	 			JOptionPane.showMessageDialog(null, "Distance: " + A4 + " Midpoint: " + A5 + ", " + A6);
+	 			run = 0;
+	 			runn = 1;
+	 			}
+			}
+		}
+	}
+
+}
